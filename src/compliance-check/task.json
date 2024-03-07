@@ -1,0 +1,20 @@
+{
+    "id": "4cb79bc1-b668-48da-84e1-1ecc632eb6df",
+    "name": "ComplianceCheck",
+    "friendlyName": "Checks compliance",
+    "description": "Checks compliance",
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "author": "Moim Hossain",
+    "version": {
+        "Major": "2",
+        "Minor": "0",
+        "Patch": "0"
+    },
+    "execution": {
+        "Node": {
+            "target": "main.js"
+        }
+    }
+}

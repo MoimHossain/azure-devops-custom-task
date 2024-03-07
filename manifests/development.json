@@ -1,0 +1,4 @@
+{
+    "id": "compliance-check-dev",
+    "baseUri": "https://localhost:3000"
+  }

@@ -1,0 +1,43 @@
+{
+    "manifestVersion": 1,
+    "id": "MoimHACumtomTaskFactory",
+    "name": "Bunch of custom tasks",
+    "icons": {
+        "default": "icon.png"
+    },
+    "version": "{{version}}",
+    "description": "This extension contains a custom build and release task.",
+    "publisher": "{{publisher}}",
+    "public": false,
+    "categories": [
+        "Azure Pipelines"
+    ],
+    "content": {
+        "details": {
+            "path": "README.md"
+        }
+    },
+    "targets": [
+        {
+            "id": "Microsoft.VisualStudio.Services"
+        }
+    ],
+    "contributions": [
+        {
+            "id": "compliance-check",
+            "type": "ms.vss-distributed-task.task",
+            "targets": [
+                "ms.vss-distributed-task.tasks"
+            ],
+            "properties": {
+                "name": "compliance-check"
+            }
+        }
+    ],
+    "files": [
+        {
+            "path": "compliance-check",
+            "addressable": true
+        }
+    ]
+}
