@@ -8,7 +8,7 @@
     ],
     "author": "Moim Hossain",
     "version": {
-        "Major": "2",
+        "Major": "4",
         "Minor": "0",
         "Patch": "0"
     },
@@ -21,7 +21,15 @@
             "defaultValue": "",
             "required": true,
             "helpMarkDown": "Please give a file name"
-        }
+        },
+        {
+            "name": "filepath",
+            "type": "string",
+            "label": "File Path",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Please give a file path"
+        }        
     ],    
     "execution": {
         "Node": {
