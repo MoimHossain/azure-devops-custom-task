@@ -1,6 +1,6 @@
 {
     "manifestVersion": 1,
-    "id": "MoimHACumtomTaskFactory",
+    "id": "CloudOvenTaskFactory",
     "name": "Bunch of custom tasks",
     "icons": {
         "default": "icon.png"

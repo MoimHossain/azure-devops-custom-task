@@ -1,9 +1,33 @@
-import * as TaskLibrary from "azure-pipelines-task-lib/task";
+import tl = require("azure-pipelines-task-lib/task");
 
-TaskLibrary.debug("Hello world!");
+async function run() {
+    try {
 
-TaskLibrary.setProgress(50, "Hello world!");
+        const inputString: string | undefined = tl.getInput("filename", true);
+        console.log("Reading immediate values...." + inputString);
+        console.log("finished execution", inputString);
 
-console.log("[Written with console log] Hello world!");
+        const fs = require("fs");
+        const path = require("path");
+        const fileName = inputString;
+        const filePath = path.join(__dirname, fileName);
+        const currentTime = new Date().toISOString();
+        fs.writeFileSync(filePath, currentTime);
+        console.log("File created successfully");
 
-TaskLibrary.setResult(TaskLibrary.TaskResult.Succeeded, "Hello world!");
+        // now upload this file as attachment
+        const attachmentType = "Distributedtask.Core.Summary";
+        const attachmentName = "ComplianceCheck";
+        const attachmentLocation = filePath;
+        console.log("Uploading attachment....");
+        tl.command("task.addattachment", { type: attachmentType, name: attachmentName }, attachmentLocation);
+        console.log("Attachment uploaded successfully");
+
+        tl.setResult(tl.TaskResult.Succeeded, "Task completed successfully");
+    }
+    catch (err) {
+        tl.setResult(tl.TaskResult.Failed, err.message);
+    }
+}
+
+run();

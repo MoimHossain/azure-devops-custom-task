@@ -12,6 +12,17 @@
         "Minor": "0",
         "Patch": "0"
     },
+    "instanceNameFormat": "Attach $(filename)",
+    "inputs": [
+        {
+            "name": "filename",
+            "type": "string",
+            "label": "File Name",
+            "defaultValue": "",
+            "required": true,
+            "helpMarkDown": "Please give a file name"
+        }
+    ],    
     "execution": {
         "Node": {
             "target": "main.js"

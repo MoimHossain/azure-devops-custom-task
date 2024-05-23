@@ -12,7 +12,7 @@
     "publish:task": "tfx build tasks upload --task-path dist/compliance-check --overwrite --token %ADO_PAT% --service-url %ADO_ACCOUNT_URI%",
     "clean:publish:task": "npm run clean:task && npm run publish:task",
     "package": "cd dist && tfx extension create --manifest-globs base.json %BUILD_ENV%.json --output-path %BUILD_ENV%.vsix --publisher %DEV_PUBLISHER% && cd ../",
-    "publish": "tfx extension publish --vsix dist/ado-extension/%BUILD_ENV%.vsix --token %ADO_PAT%",
+    "publish": "tfx extension publish --vsix dist/%BUILD_ENV%.vsix --token %ADO_PAT%",
     "dev": "npm run build && npm run package && npm run publish && npm run clean:publish:task",
     "dev:task": "npm run build && npm run clean:publish:task"
   },
